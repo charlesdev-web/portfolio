@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Ma To-Do List</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+text-align:center;
+margin-top:80px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+display:inline-block;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+input{
+padding:10px;
+width:200px;
+}
+
+button{
+padding:10px;
+margin-left:5px;
+cursor:pointer;
+}
+
+li{
+margin-top:10px;
+list-style:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Ma To-Do List</h1>
+
+<input id="tache" placeholder="Ajouter une tâche">
+<button onclick="ajouter()">Ajouter</button>
+
+<ul id="liste"></ul>
+
+</div>
+
+<script>
+
+function ajouter(){
+
+let tache = document.getElementById("tache").value
+
+if(tache === "") return
+
+let li = document.createElement("li")
+
+li.textContent = tache
+li.onclick = function(){
+li.style.textDecoration = "line-through"
+}
+
+let supprimer = document.createElement("button")
+supprimer.textContent = "❌"
+
+supprimer.onclick = function(){
+li.remove()
+}
+
+li.appendChild(supprimer)
+document.getElementById("liste").appendChild(li)
+
+document.getElementById("tache").value = ""
+
+}
+
+</script>
+
+</body>
+</html>
