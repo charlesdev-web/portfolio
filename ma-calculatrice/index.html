@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Calculatrice</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+text-align:center;
+margin-top:100px;
+}
+
+.calculatrice{
+background:white;
+padding:30px;
+border-radius:10px;
+display:inline-block;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+input{
+padding:10px;
+margin:5px;
+width:150px;
+}
+
+button{
+padding:10px 15px;
+margin:5px;
+font-size:18px;
+cursor:pointer;
+}
+
+#resultat{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="calculatrice">
+
+<h1>Calculatrice</h1>
+
+<input id="num1" type="number" placeholder="Premier nombre">
+<input id="num2" type="number" placeholder="Deuxième nombre">
+
+<br>
+
+<button onclick="addition()">+</button>
+<button onclick="soustraction()">-</button>
+<button onclick="multiplication()">*</button>
+<button onclick="division()">/</button>
+
+<p id="resultat"></p>
+
+</div>
+
+<script>
+
+function addition(){
+let a = Number(document.getElementById("num1").value)
+let b = Number(document.getElementById("num2").value)
+document.getElementById("resultat").innerText = a + b
+}
+
+function soustraction(){
+let a = Number(document.getElementById("num1").value)
+let b = Number(document.getElementById("num2").value)
+document.getElementById("resultat").innerText = a - b
+}
+
+function multiplication(){
+let a = Number(document.getElementById("num1").value)
+let b = Number(document.getElementById("num2").value)
+document.getElementById("resultat").innerText = a * b
+}
+
+function division(){
+let a = Number(document.getElementById("num1").value)
+let b = Number(document.getElementById("num2").value)
+document.getElementById("resultat").innerText = a / b
+}
+
+</script>
+
+</body>
+</html>
